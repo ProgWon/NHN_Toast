@@ -14,7 +14,8 @@
         request.setCharacterEncoding("utf-8");
 	String title=request.getParameter("title");
 	String genre=request.getParameter("genre");
-        int id=Integer.parseInt(request.getParameter("id"));
+        String name=request.getParameter("name");
+        int age=Integer.parseInt(request.getParameter("age"));
 
         //db에 저장하기
         String DB_URL = "jdbc:mysql://192.168.0.59:13303/toast";
@@ -22,7 +23,7 @@
         String DB_PASSWORD = "aoxkf101D!";
 	Connection con = null;
         PreparedStatement pstmt = null;
-        String sql = "insert movies (id,title,genre) values(?,?,?)";
+        String sql = "insert into movies values(?,?,?,?)";
         int n=0;
 
         try{
@@ -30,9 +31,11 @@
                 Class.forName("com.mysql.jdbc.Driver");
                 con = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
                 pstmt = con.prepareStatement(sql);
-                pstmt.setInt(1, id);
-		pstmt.setString(2, title);
-                pstmt.setString(3, genre);
+                pstmt.setString(1, title);
+                pstmt.setString(2, genre);
+                pstmt.setString(3, name);
+                pstmt.setInt(4, age);
+
                 
 
                 n = pstmt.executeUpdate();

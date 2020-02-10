@@ -21,7 +21,7 @@
 	//db에 저장하기
 	Connection con = null;
 	PreparedStatement pstmt = null;
-	String sql = "insert into directors values(?,?)";
+	String sql = "insert directors (name,age) values(?,?)";
 	
 	int n=0;
 
