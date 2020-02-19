@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
+<h1>Deploy Success!!!</h1>
 <ul>
 	<li><a href="insert1.html">Add Director</a></li>
 	<li><a href="insert2.html">Add Moive</a></li>
